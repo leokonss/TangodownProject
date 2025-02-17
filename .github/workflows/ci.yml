@@ -28,7 +28,7 @@ jobs:
         run: mvn -B package --file pom.xml
 
       - name: Attach screenshots and reports
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: screenshots-and-report
@@ -37,7 +37,7 @@ jobs:
             target/surefire-reports/emailable-report.html
 
       - name: Attach reports only
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: report
           path: target/surefire-reports/emailable-report.html
